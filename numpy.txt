@@ -1,0 +1,130 @@
+Write a Python program to create a 3×3 matrix with values ranging from 2 to 10.
+
+import numpy as np
+x = np.array([1,2,3,4,5,6,7,8,9,100,20,30,45,30])
+print ("max=",x.max(),"min=",x.min(),"mean=",x.mean(),"var=",x.var())
+
+----------------------------------------------------------------------------------------
+
+Python program to multiply all values in the list using numpy.prod()-
+import numpy 
+list1 = [1, 2, 3] 
+list2 = [3, 2, 4]
+ 
+# using numpy.prod() to get the multiplications 
+result1 = numpy.prod(list1)
+result2 = numpy.prod(list2)
+print("List 1=",result1)
+print("List 2=",result2)
+
+----------------------------------------------------------------------------------------
+
+Write a Python program to create a 3×3 matrix-
+import numpy as np
+x =  np.arange(2, 11).reshape(3,3)
+print(x)
+
+----------------------------------------------------------------------------------------
+
+Python program to reverse an array-
+import numpy as np
+x = np.arange(12, 38)
+print("Original array:")
+print(x)
+print("Reverse array:")
+x = x[::-1]
+print(x)
+
+----------------------------------------------------------------------------------------
+
+Python program to append values to the end of an array-
+import numpy as npappend
+x = [100, 200, 300]
+print("Original array:")
+print(x)
+x = npappend.append(x, [[400, 500, 610], [700, 810, 900]])
+print("After append the values are:")
+print(x)
+
+----------------------------------------------------------------------------------------
+
+Python program for checking the unique elements of an array-
+import numpy as np
+x = np.array([10, 10, 20, 20, 30, 30])
+print("Original array:")
+print(x)
+print("Unique elements of the above array:")
+print(np.unique(x))
+x = np.array([[1, 1], [2, 3]])
+print("Original array:")
+print(x)
+print("Unique elements of the above array:")
+print(np.unique(x))
+
+----------------------------------------------------------------------------------------
+
+Converting Numpy Array to List :
+
+import numpy as np
+# NumPy array created
+arr = np.array([1, 2, 3, 4, 5])
+# Printing the NumPy array
+print('Numpy Array:', arr)
+# Converting 1D Numpy Array to list
+num_list = arr.tolist()
+# Printing the list
+print('List: ', num_list)
+
+----------------------------------------------------------------------------------------
+
+. Write a NumPy program to concatenate element-wise two arrays of string.
+
+import numpy as np 
+a = np.array([[1,2],[3,4]]) 
+
+print 'First array:' 
+print a 
+print '\n'  
+b = np.array([[5,6],[7,8]]) 
+
+print 'Second array:' 
+print b 
+print '\n'  
+# both the arrays are of same dimensions 
+
+print 'Joining the two arrays along axis 0:' 
+print np.concatenate((a,b)) 
+print '\n'  
+
+print 'Joining the two arrays along axis 1:' 
+print np.concatenate((a,b),axis = 1)
+
+----------------------------------------------------------------------------------------
+
+Write a NumPy program to split the element of a given array with spaces
+
+import numpy as np
+x = np.array(['Python PHP Java C++'], dtype=np.str)
+print("Original Array:")
+print(x)
+r = np.char.split(x)
+print("\nSplit the element of the said array with spaces: ")
+print(r)
+
+----------------------------------------------------------------------------------------
+
+Write a NumPy program to count the number of "P" in a given array, element-wise.
+
+import numpy as np
+x1 = np.array(['Python', 'PHP', 'JS', 'examples', 'html'], dtype=np.str)
+print("\nOriginal Array:")
+print(x1)
+print("Number of ‘P’:")
+r = np.char.count(x1, "P")
+print(r)
+
+----------------------------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------------------------
