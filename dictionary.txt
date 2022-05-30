@@ -1,0 +1,295 @@
+Programs On Python Dictionary:
+1.Write a Python program to count the number of characters (character frequency) in a string.
+Ans.
+def c(str1):
+    dict = {}
+    for n in str1:
+        keys = dict.keys()
+        if n in keys:
+            dict[n] += 1
+        else:
+            dict[n] = 1
+    return dict
+print(c('google.com'))
+
+------------------------------------------------------------------------------------------
+ 
+2.Write a python program to Check for Key in Dictionary Value list.
+Ans.
+test_dict = {'Simply' : [{'CS' : 5}, {'Python' : 6}], 'for' : 2, 'CS' : 3} 
+ 
+print("The original dictionary is : " + str(test_dict)) 
+ 
+key = "Python"
+res = any(key in ele for ele in test_dict['Simply'])
+ 
+print("Is key present in nested dictionary list ?  : " + str(res)) 
+
+-----------------------------------------------------------------------------------------
+ 
+3.Write a python program to Concatenate Dictionary string values.
+Ans.  
+test_dict1 = {'SC' : 'a', 'is' : 'b', 'best' : 'c'}
+test_dict2 = {'SC' : '1', 'is' : '2', 'best' : '3'}
+ 
+print("The original dictionary 1 : " + str(test_dict1))
+print("The original dictionary 2 : " + str(test_dict2))
+ 
+res = {key: test_dict1[key] + test_dict2.get(key, '') for key in test_dict1.keys()}
+ 
+print("The string concatenation of dictionary is : " + str(res))
+
+-----------------------------------------------------------------------------------------
+ 
+4.Write a python program to print Keys with Maximum value from dictionary.
+Ans.  
+test_dict = {'Simply' : 2, 'Coding' : 1, 'Python' : 3, 'java': 2}
+ 
+print("The original dictionary is : " + str(test_dict))
+ 
+temp = max(test_dict.values())
+res = [key for key in test_dict if test_dict[key] == temp]
+ 
+print("Keys with maximum values are : " + str(res))
+
+---------------------------------------------------------------------------------------
+ 
+5.Write a python program to find dictionary Keys Product.
+Ans.
+test_dict1 = {'gfg' : 6, 'is' : 4, 'best' : 7}
+test_dict2 = {'gfg' : 10, 'is' : 6, 'best' : 10}
+ 
+print("The original dictionary 1 : " + str(test_dict1))
+print("The original dictionary 2 : " + str(test_dict2))
+ 
+res = {key: test_dict2[key] * test_dict1.get(key, 0)for key in test_dict2.keys()}
+ 
+print("The product dictionary is : " + str(res))
+
+-------------------------------------------------------------------------------------
+
+Check if a Given Key Already Exists in Dictionary
+
+D1 = {'first_name' : 'Jim', 'age' : 23, 'height' : 6.0 , 'job' : 'developer', 'company': 'XYZ'}
+ 
+def check_key(x):
+  if x in D1:
+      return 'Yes'
+  else:
+      return 'No'
+print("Is key named 'first_name' present?", check_key('first_name'))
+print("Is key named 'jobs' present?", check_key('jobs'))
+
+------------------------------------------------------------------------------------
+
+Extract Unique Values in a Given Dictionary
+In a dictionary, the keys have to be unique, whereas the values can be duplicated. So, given a dictionary as shown below, how can you print all the unique values it has?
+
+D1 = {'list1': [4, 7, 10, 20], 
+      'list2': [7, 16, 9, 10], 
+      'list3': [13, 10, 4, 8], 
+      'list4': [7, 20, 6, 11]}
+Output = [4, 6, 7, 8, 9, 10, 11, 13, 16, 20]
+ 
+#Extract unique values in dictionary
+#Initializing Dictionary
+D1 = {'list1': [4, 7, 10, 20], 
+      'list2': [7, 16, 9, 10], 
+      'list3': [13, 10, 4, 8], 
+      'list4': [7, 20, 6, 11]}
+ 
+#Actual dictionary
+print("The given dictionary is:", str(D1))
+ 
+#Extract the sorted unique values using set_comprehension + values() + sorted()
+uniqueVals = list(sorted({val2 for val1 in D1.values() for val2 in val1 }))
+ 
+#list of unique values
+print("The unique values of the given dictionary are:", uniqueVals)
+
+----------------------------------------------------------------------------------
+
+Print the Sum of Key Value Pairs in a Given Dictionary
+ 
+D1 = {2: 8, 5: 20, 3: 15}
+res_sumList = []
+ 
+# Traverse the dictionary
+for key in D1:
+  res_sumList.append(key + D1[key])
+ 
+# Print the list
+print("Sum of Key-value pairs is =",list(res_sumList))
+
+----------------------------------------------------------------------------------
+
+#Replace values in dict1 from dict2, if key is present in dict2 - Using loops
+ 
+# initializing D1 - first dictionary
+D1 = {'first_name' : 'Jim', 'age' : 23, 'height' : 6.0 , 'job' : 'developer', 'company': 'XYZ'}
+ 
+# initializing D2 - - first dictionary
+D2 = {'age' : 35, 'job' : 'senior data analyst'}
+ 
+for key in D1:
+ 
+  # checking if key present in dict2
+  if key in D2:
+    D1[key] = D2[key]
+ 
+# printing the details
+print("The original dictionary: " + str(D1))
+print("The updated dictionary: " + str(D2))
+
+-----------------------------------------------------------------------------------
+
+#changing the keys of dictionary
+ 
+D1 = {'jim': 23, 'sam': 29, 'dean': 33, 'micheal': 40}
+ 
+#print the original dictionary
+print("The original dictionary is =", D1)
+ 
+#using assignment (basic technique)
+#changing key 'jim' to 'sam'
+D1['sam'] = D1['jim']
+del D1['jim']
+# printing result
+print ("Dictionary D1 after changing key 'jim'=", str(D1))
+ 
+#using pop() function
+#changing key 'sam' to 'anni'
+D1['anni'] = D1.pop('sam')
+# printing result
+print ("Dictionary D1 after changing key 'sam'=", str(D1))
+ 
+#To change all the keys
+#use zip()
+new_keyslist = ['tom', 'simon', 'tony', 'roy']
+final_D1 = dict(zip(new_keyslist, list(D1.values())))
+# printing result
+print ("Dictionary D1 after changing all keys=", str(final_D1))
+
+-------------------------------------------------------------------------
+
+#deleting list of keys of dictionary
+D1 = {'jim': 23, 'sam': 29, 'dean': 33, 'micheal': 40}
+ 
+# Keys to remove
+keys = ["jim", "sam"]
+ 
+for k in keys:
+    D1.pop(k)
+print(D1)
+
+--------------------------------------------------------------------------
+
+#count the frequency of list item and
+#print them in the form [list item: frequency]
+List1 = [1, 2, 2, 3, 4, 1, 4, 5, 5, 6, 7, 7]
+ 
+def CountOccur(test_list):
+ 
+   # create an empty dictionary
+   res_dict = {}
+   for i in test_list:
+    res_dict[i] = res_dict.get(i, 0) + 1
+   return res_dict
+ 
+# Driver function
+if __name__ == "__main__":
+    print(CountOccur(List1))
+
+---------------------------------------------------------------------------
+
+#change the value of a key in nested dictionary
+#Initializing Dictionary
+D1 = {'emp1': {'name' : 'Jim', 'age' : 26, 'job' : 'developer'}, 
+      'emp2': {'name' : 'Sam', 'age' : 30, 'job' : 'data analyst'}, 
+      'emp3': {'name' : 'Dean', 'age' : 29, 'job' : 'data scientist'}, 
+      'emp4': {'name' : 'Leo', 'age' : 25, 'job' : 'python developer'}}
+ 
+#Actual dictionary
+print("The actual dictionary is:", D1)
+#Change the value of a dictionary
+D1['emp3']['age'] = 24
+#Updated dictionary
+print("The updated dictionary is:", D1)
+
+-------------------------------------------------------------------------
+
+#map to given lists into a dictionary
+keys = ['first_name', 'age' , 'job', 'company']
+values = ['Jim', 23, 'developer', 'XYZ']
+ 
+#map using zip()
+D1 = dict(zip(keys, values))
+print(D1)
+ 
+-----------------------------------------------------------------------
+
+#check if the dictionary is empty or not using bool()
+#Initializing Dictionary
+D1 = {}
+ 
+#Actual dictionary
+print("The actual dictionary is:", str(D1))
+ 
+#checking if empty or not
+result = not bool(D1)
+print("Is the given dictionary empty? :", result)
+ 
+---------------------------------------------------------------------
+
+#get keys with max and min values
+# Dictionary Initialization
+D1 = {'Jim': 23, 'Sam': 29, 'Dean': 33, 'Micheal': 40}
+ 
+# Python code to find key with Maximum value in Dictionary
+Key_max = max(D1, key= lambda x: D1[x])
+Key_min = min(D1, key= lambda x: D1[x])
+print("The key with maximum value:", Key_max, ",& corresponding value:", D1[Key_max])
+print("The key with minimum value:", Key_min, ",& corresponding value:", D1[Key_min])
+
+----------------------------------------------------------------------------------------------
+
+#Check if the Substring Matches Any Key in a Dictionary
+# Dictionary Initialization
+D1 = {'Jim': 23, 'Sam Winchester': 29, 'Dean Winchester': 33, 'Micheal': 40}
+ 
+#search substring
+search_string = "Winchester"
+#Actual dictionary
+print("The actual dictionary is:", str(D1))
+ 
+res_string = dict(filter(lambda item: search_string in item[0], D1.items()))
+ 
+#Resultant dictionary
+print("The Key-Value pair for search keys ::", str(res_string))
+ 
+---------------------------------------------------------------------------------------
+
+#get key for a given value using dict.items()
+# Dictionary Initialization
+D1 = {'Jim': 23, 'Sam Winchester': 29, 'Dean Winchester': 45, 'Micheal': 40}
+ 
+def getKey(dict_val):
+    for dict_key, value in D1.items():
+         if dict_val == value:
+             return dict_key
+    return "key doesn't exist"
+ 
+print("Get key of value 40:", getKey(40))
+print("Get key of value 20:", getKey(20))
+
+----------------------------------------------------------------------------------------
+
+#sort a dictionary by key
+# Dictionary Initialization
+D1 = {'Jim': 23, 'Jerry': 29, 'Micheal': 40, 'Merlin': 45, 'Antony': 34}
+ 
+res_dict = sorted(D1.items())
+print(res_dict)
+
+------------------------------------------------------------------------------------
+
