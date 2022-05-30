@@ -1,0 +1,120 @@
+[1] Create a text file “intro.txt” in python and ask the user to write a single line of text by user input.
+
+def program1():
+    f = open("intro.txt","w")
+    text=input("Enter the text:")
+    f.write(text)
+    f.close()
+program1()
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+[2] Create a text file “MyFile.txt” in python and ask the user to write separate 3 lines with three input statements from the user.
+
+def program2():
+    f = open("MyFile.txt","w")
+    line1=input("Enter the text:")
+    line2=input("Enter the text:")
+    line3=input("Enter the text:")
+    new_line="\n"
+    f.write(line1)
+    f.write(new_line)
+    f.write(line2)
+    f.write(new_line)
+    f.write(line3)
+    f.write(new_line)
+    f.close()
+program2()
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Count the total number of upper case, lower case, and digits used in the text file “merge.txt”.
+
+def program4():
+    with open("merge.txt","r") as f1:
+       data=f1.read()
+    cnt_ucase =0
+    cnt_lcase=0
+    cnt_digits=0
+    for ch in data:
+        if ch.islower():
+            cnt_lcase+=1
+        if ch.isupper():
+            cnt_ucase+=1
+        if ch.isdigit():
+            cnt_digits+=1
+    print("Total Number of Upper Case letters are:",cnt_ucase)
+    print("Total Number of Lower Case letters are:",cnt_lcase)
+    print("Total Number of  digits are:",cnt_digits)
+program4()
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+[6] Find the total occurrences of a specific word from a text file:
+
+def program6():
+    cnt = 0
+    word_search = input("Enter the words to search:")
+    with open("merge.txt","r") as f1:
+        for data in f1:
+            words = data.split()
+            for word in words:
+                if (word == word_search):
+                    cnt+=1
+    print(word_search, "found ", cnt, " times from the file")
+program6()
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+[8] Replace all spaces from text with – (dash).
+
+def program8():
+    cnt = 0
+    n = int(input("Enter no. characters to read:"))
+    with open("merge.txt","r") as f1:
+       data = f1.read()
+       data=data.replace(' ','-')
+    with open("merge.txt","w") as f1:
+        f1.write(data)
+program8()
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+[10] Append the contents in entered by the user in the text file:
+
+def program10():
+    text = input("Enter text to append in the file:")
+    with open("merge.txt","a") as f1:
+        f1.write(text)
+program10()
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+[11] Read the contents of file in reverse order:
+
+def program11():
+    for i in reversed(list(open("merge.txt","r"))):
+        print(i.rstrip())
+program11()
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Write a Python program to read an entire text file
+
+file1 = open("MyFile.txt","w+") 
+
+file1.readline()
+
+fil1.write("string")
+
+file1.close()
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
